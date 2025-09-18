@@ -288,6 +288,39 @@
                 display: block;
             }
         }
+        /* 위로가기 버튼 스타일 */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #d73527, #b71c1c);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 1.7em;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
+            opacity: 0.85;
+        }
+        #backToTop:hover {
+            background: linear-gradient(135deg, #b71c1c, #d73527);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+            #backToTop {
+                width: 38px;
+                height: 38px;
+                font-size: 1.2em;
+                bottom: 18px;
+                right: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -443,7 +476,8 @@
         <div class="article" id="article13">
             <div class="article-title">제13조 심사위원의 구성</div>
             <div class="article-content">
-                <div class="sub-item">1) 본 대회 심사위원의 자격은 각 해당분야의 교수, 평론가, 작곡가, 예능 보유자, 이수자, 실기분야 15년이상 경력자등 사회통념상 심사위원으로서 명망과 자격이 인정되는 자로 구성한다.</div>
+                <div class="sub-item">1) 본 대회 심사위원의 자격은 각 해당분야의 교수, 평론가, 작곡가, 예능 보유자, 
+                    이수자, 사회통념상 심사위원으로서 명망과 자격이 인정되는 자로 구성한다.</div>
                 <div class="sub-item">2) 유사 경연대회 심사부정 등 해당분야에서 심사관련 물의를 일으킨 자, 경연자의 친인척 관계에 있는 자는 심사위원 구성에서 제외한다.</div>
                 <div class="sub-item">3) 심사회피제도를 운영한다.</div>
                 <div class="sub-item">4) 대회 당일까지 심사위원 명단은 비공개를 원칙으로 한다.</div>
@@ -554,7 +588,7 @@
                         </tr>
                         <tr>
                             <td><strong>기타</strong></td>
-                            <td>분야별 2인 이상, 15인 이하로 구성</td>
+                            <td>분야별 2인 이상, 20인 이하로 구성</td>
                         </tr>
                     </tbody>
                 </table>
@@ -624,11 +658,10 @@
                     <thead>
                         <tr>
                             <th>구분</th>
-                            <th>소 리</th>
-                            <th>무 용</th>
-                            <th>기 악</th>
+                            <th>소리</th>
+                            <th>무용</th>
+                            <th>기악</th>
                             <th>타악</th>
-                            <th>창작</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -638,15 +671,13 @@
                             <td>20</td>
                             <td>20</td>
                             <td>20</td>
-                            <td>20</td>
                         </tr>
                         <tr>
-                            <td><strong>음정, 박자</strong></td>
+                            <td><strong>음정/박자</strong></td>
                             <td>20</td>
                             <td>20</td>
                             <td>20</td>
                             <td>20</td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td><strong>자태</strong></td>
@@ -654,7 +685,6 @@
                             <td>20</td>
                             <td>20</td>
                             <td>20</td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td><strong>성음</strong></td>
@@ -662,27 +692,16 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
                         </tr>
                         <tr>
-                            <td><strong>연주(반주)</strong></td>
+                            <td><strong>연주</strong></td>
                             <td></td>
-                            <td></td>
-                            <td>20</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><strong>의상</strong></td>
-                            <td>20</td>
-                            <td>20</td>
                             <td>20</td>
                             <td>20</td>
                             <td>20</td>
                         </tr>
                         <tr>
                             <td><strong>예술성</strong></td>
-                            <td>20</td>
                             <td>20</td>
                             <td>20</td>
                             <td>20</td>
@@ -769,6 +788,9 @@
         </div>
     </div>
 
+    <!-- 위로가기 버튼 -->
+    <button id="backToTop" title="위로가기" aria-label="위로가기">&#8679;</button>
+
     <script>
         // 부드러운 스크롤 효과
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -814,6 +836,22 @@
             
             row.addEventListener('mouseleave', function() {
                 this.style.transform = 'scale(1)';
+            });
+        });
+
+        // 위로가기 버튼 기능
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
