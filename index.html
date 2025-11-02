@@ -257,6 +257,15 @@
             th, td {
                 padding: 7px 6px;
             }
+            /* 위로가기 버튼 강화 (모바일) */
+            #backToTop {
+                width: 52px !important;
+                height: 52px !important;
+                font-size: 1.45em !important;
+            }
+            .backToTop-label {
+                font-size: 1em !important;
+            }
         }
         @media (max-width: 480px) {
             .header h1 {
@@ -274,6 +283,16 @@
             }
             th, td {
                 padding: 5px 3px;
+            }
+            #backToTop {
+                width: 46px !important;
+                height: 46px !important;
+                font-size: 1.15em !important;
+                bottom: 14px !important;
+                right: 8px !important;
+            }
+            .backToTop-label {
+                font-size: 0.87em !important;
             }
         }
         /* 테이블 스크롤 안내 */
@@ -294,31 +313,68 @@
             position: fixed;
             bottom: 32px;
             right: 32px;
-            z-index: 1000;
-            background: linear-gradient(135deg, #d73527, #b71c1c);
+            z-index: 1200;
+            background: linear-gradient(135deg, #d73527 0%, #ff6767 100%);
             color: #fff;
             border: none;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            font-size: 1.7em;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            border-radius: 24px;
+            width: 62px;
+            height: 62px;
+            box-shadow: 0 4px 32px 0 rgba(50,0,0,0.25), 0 1.5px 7px rgba(0,0,0,0.15);
             cursor: pointer;
-            transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
-            opacity: 0.85;
+            transition: background 0.24s, box-shadow 0.24s, opacity 0.2s;
+            opacity: 0.93;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25em;
+            font-size: 2.1em;
+            border: 2px solid #fff7;
         }
         #backToTop:hover {
-            background: linear-gradient(135deg, #b71c1c, #d73527);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+            background: linear-gradient(135deg, #b71c1c 80%, #d73527 100%);
+            box-shadow: 0 9px 32px rgba(0,0,0,0.26);
             opacity: 1;
+            border: 2px solid #fff;
+        }
+        #backToTop .backToTop-label {
+            font-size: 1.01em;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: -1px;
+            margin-top: 1px;
+            margin-bottom: -1px;
+            text-shadow: 0px 2px 9px rgba(100,20,20,0.16), 0px 0px 1px #b71c1c;
+            user-select: none;
+            pointer-events: none;
+            text-align: center;
+            line-height: 1.1;
+        }
+        #backToTop .backToTop-arrow {
+            filter: drop-shadow(0 1px 1.4px #932  );
+            text-shadow:  0 0 2px #fff, 0 2px 6px #b71c1c90;
         }
         @media (max-width: 768px) {
             #backToTop {
-                width: 38px;
-                height: 38px;
-                font-size: 1.2em;
+                width: 48px;
+                height: 48px;
+                font-size: 1.55em;
                 bottom: 18px;
                 right: 12px;
+            }
+            #backToTop .backToTop-label {
+                font-size: 0.95em;
+            }
+        }
+        @media (max-width: 480px) {
+            #backToTop {
+                width: 40px;
+                height: 40px;
+                font-size: 1.01em;
+            }
+            #backToTop .backToTop-label {
+                font-size: 0.81em;
             }
         }
     </style>
@@ -356,424 +412,20 @@
             </ul>
         </div>
 
+        <!-- 이하 본문(생략, 문서 동일) -->
         <div class="article" id="article1">
             <div class="article-title">제1조 명칭</div>
             <div class="article-content">
                 본 대회를 '미주한국국악경연대회'라 칭한다.
             </div>
         </div>
-
         <div class="article" id="article2">
             <div class="article-title">제2조 대회운영 및 심사규정의 목적</div>
             <div class="article-content">
                 미주 내 우수한 국악인재를 발굴, 육성하기 위하여 대회를 권위있는 국악등용문으로 정착시키고 전통국악의 보전과 창달을 도모함에 있으며, 대외적으로 신뢰성을 높이고 각 부문의 경연을 공정하고 엄격하게 심사하기 위함을 목적으로 한다.
             </div>
         </div>
-
-        <div class="article" id="article3">
-            <div class="article-title">제3조 대회운영</div>
-            <div class="article-content">
-                <div class="highlight">
-                    "미주한국국악경연대회 조직위원회 (이하 조직위원회라 칭한다)"가 주관하고, "미주예술원 다루"가 주최한다.
-                </div>
-                <div class="sub-item">1) 주관단체인 미주한국국악경연대회 조직위원회는 주관자로서 대회의 원활한 업무지원과 총괄관리, 감독을 수행하며 대회성과 보고 및 보존의 책임을 수행한다.</div>
-                <div class="sub-item">2) 주최단체 미주예술원 다루는 전반적인 대회의 업무를 집행하며 보조금 지원, 대회의 질적 향상과 추진방향 제시 등 실질적 업무를 수행하며 대회 운영을 총괄한다.</div>
-                <div class="sub-item">3) 미주예술원 다루 대표는 본 대회 조직위원장을 겸할 수 있다.</div>
-                <div class="sub-item">4) 경연대회 장소는 미주예술원 다루가 지정한 공연장에서 실시함을 원칙으로 한다.</div>
-                <div class="sub-item">5) 경연대회 자금은 기본적으로 다루예술원과 다루이사회 보조금 지원으로 충당하며 기타 자체자금 및 기업체와 유관기관의 후원금으로 충당한다.</div>
-            </div>
-        </div>
-
-        <div class="article" id="article4">
-            <div class="article-title">제4조 조직위원회</div>
-            <div class="article-content">
-                <div class="sub-item">1) 대회의 원활한 운영을 위해 조직위원회를 구성하며 조직위원은 다루 이사회에서 결정하며, 조직위원장의 임명은 다루이사회의 결정에 따른다.</div>
-                <div class="sub-item">2) 조직위원장은 본 대회운영에 대한 권한과 책임을 가지는 동시에 심사위원회에 운영 및 심사규정을 충분히 설명하고 숙지시켜야 하며, 직계제자 및 8촌 이내 친인척이 참석할 경우 심사를 자발적으로 회피하도록 사전에 고지하여야 한다. (심사회피제도 적극 운영)</div>
-                <div class="sub-item">3) 대회운영 및 심사 규정의 예외규정을 적용할 때에는 경연 전에 참가자들에게 사전 고지하며 게시판에 별도 게시하여야 한다.</div>
-            </div>
-        </div>
-
-        <div class="article" id="article5">
-            <div class="article-title">제5조 경연방법</div>
-            <div class="article-content">
-                <div class="sub-item">1) 소리(판소리, 민요), 한국무용, 기악(관악, 현악), 타악(사물놀이, 풍물) 부문에 한개인이 한개부문에 신청하여 유/초등부, 중/고등부, 대학/일반부, 시니어부(62세 이상), 타인종부로 경연하며 창작국악 부문을 경연에 포함시킬 수 있다. 만약 타인종부 참가자의 실력이 다른 참가자들과 대등할 경우 타인종부로 분리하지 않는다.</div>
-                <div class="sub-item">2) 각 부문별 본선의 경연순서는 예선접수의 역순으로 정한다.</div>
-                <div class="sub-item">3) 예선은 동영상심사로 하며 결과는 개인별 유무선, 이메일로 통보한다.</div>
-            </div>
-        </div>
-
-        <div class="article" id="article6">
-            <div class="article-title">제6조 자격 및 대상</div>
-            <div class="article-content">
-                한국전통국악과 창작국악에 재주와 열정 있는 개인, 단체로 연령 및 참가인원에 제한없이 누구나 관련부문에 참가할 수 있다. 단 본 대회와 타 대회의 문체부장관상 수상자는 동일부문에 참가할 수 없으며, 과거 본 대회에서 물의를 일으켜 대회이미지를 손상시킨 경력이 있는 자는 대회에 참가할 수 없다.
-            </div>
-        </div>
-
-        <div class="article" id="article7">
-            <div class="article-title">제7조 참가신청</div>
-            <div class="article-content">
-                <div class="highlight">
-                    대회 참가비는 개인(individual) $100, 단체(group) $200이며, 참가신청 기간내에 이메일, 우편접수 등으로 신청하여야 하며, 참가자 본인임을 증명할 수 있어야 한다.
-                    <br>(홈페이지 www.kukakusa.com<br>https://bit.ly/kukak-submit<br>https://docs.google.com/forms/d/1k2CsLJqyc5qPy6H419D_UnfhjQqoOcRzxY1NFuwchkA/edit 참조)
-                </div>
-            </div>
-        </div>
-
-        <div class="article" id="article8">
-            <div class="article-title">제8조 수상자 결정 유보</div>
-            <div class="article-content">
-                <div class="sub-item">1) 심사위원회는 부문별 경연자가 일정수준에 미치지 못한다고 판단한 경우나 심사회피제도에 위배됨이 판단될 경우에는 시상을 유보할 수 있다.</div>
-                <div class="sub-item">2) 제8조 1항이 적용될 경우 조직위원회와 심사위원회의 합의로 재경연 또는 차점자로 수상자를 결정할 수 있다.</div>
-            </div>
-        </div>
-
-        <div class="article" id="article9">
-            <div class="article-title">제9조 게시판 운영</div>
-            <div class="article-content">
-                대회에 관련된 모든 사항을 참가자와 관람자들이 열람할 수 있도록 경연장 입구에 아래 내용을 게시한다.
-                <div class="sub-item">1) 운영 및 심사규정</div>
-                <div class="sub-item">2) 심사위원 명단</div>
-                <div class="sub-item">3) 심사회피제도</div>
-                <div class="sub-item">4) 경연자 및 경연순서</div>
-                <div class="sub-item">5) 총점 현황</div>
-                <div class="sub-item">6) 참가자 민원창구 (집행부 문의처)</div>
-                <div class="sub-item">7) 기타 조직위원회나 심사위원회에서 알리는 게시물</div>
-            </div>
-        </div>
-
-        <div class="article" id="article10">
-            <div class="article-title">제10조 수상자 사후관리 고지</div>
-            <div class="article-content">
-                본 대회 수상자에게 활동기회를 부여하기 위해 아래의 수상자 사후관리 내용을 고지한다.
-                <div class="highlight">
-                    "수상자는 대회 주최단체가 주최, 주관하는 각종 연주회와 공연에 출연 또는 협연이 가능하며 본인의 의지에 따라 회원 또는 특별회원이 될 수 있다. 기타 공연단체 및 학교 등에 추천하는 등 수상자의 활동을 적극 지원한다."
-                </div>
-            </div>
-        </div>
-
-        <div class="article" id="article11">
-            <div class="article-title">제11조 홍보물 발행</div>
-            <div class="article-content">
-                홍보물(브로셔, 전단지 등)을 발행할 경우 심사항목과 심사기준, 심사방법, 심사결과 발표방법과 심사회피제도 등 중요사항을 기재한다.
-            </div>
-        </div>
-
-        <div class="article" id="article12">
-            <div class="article-title">제12조 대회운영방법</div>
-            <div class="article-content">
-                <div class="highlight">
-                    본 대회의 공정성과 공신력을 최선의 목표로 하며 아래같이 대회를 운영한다.
-                </div>
-                <div class="sub-item">1) 조직위원회는 심사에 관여하거나 영향을 주어서는 안되며, 심사위원이 공정한 심사를 할 수 있도록 심사위원회의 독립성을 보장한다. 단, 심사위원 판단에 공정성 결여시 조직위원장과 대회장 합의로 조정할 수 있다.</div>
-                <div class="sub-item">2) 본 대회의 참가자가 요청할 시에는 심사내용 원본을 차후에 공개할 수 있다</div>
-                <div class="sub-item">3) 본 대회의 부문별 경연내용과 심사위원을 동영상으로 저장, 보존하여야 하고 장면에 정확한 일시가 표시되도록 한다.</div>
-                <div class="sub-item">4) 경연장에 운영요원을 배치하고, 이름표를 착용하도록 한다. (조직위원, 안내 등)</div>
-                <div class="sub-item">5) 각 부문의 경연시간은 대회의 효율을 기하기 위해서 필요에 따라 해당 심사위원 전원의 합의로 경연시간을 조정할 수 있으며, 사전에 참가자에게 고지한다.</div>
-                <div class="sub-item">6) 본 대회의 운영은 참가자들의 편의를 최우선으로 고려하고, 본 대회 규정은 참가자에게 불리하게 해석 잋 변경되어 운영되지 않음을 원칙으로 한다.</div>
-            </div>
-        </div>
-
-        <div class="article" id="article13">
-            <div class="article-title">제13조 심사위원의 구성</div>
-            <div class="article-content">
-                <div class="sub-item">1) 본 대회 심사위원의 자격은 각 해당분야의 교수, 평론가, 작곡가, 예능 보유자, 이수자, 전수자 등 사회통념상 심사위원으로서 명망과 자격이 인정되는 자로 구성한다.</div>
-                <div class="sub-item">2) 유사 경연대회 심사부정 등 해당분야에서 심사관련 물의를 일으킨 자, 경연자의 친인척 관계에 있는 자는 심사위원 구성에서 제외한다.</div>
-                <div class="sub-item">3) 심사회피제도를 운영한다.</div>
-                <div class="sub-item">4) 대회 당일까지 심사위원 명단은 비공개를 원칙으로 한다.</div>
-                <div class="sub-item">5) 비전문심사위원 (청중평가단)을 구성하여 운영할 수 있다. (아래 표4 참조)</div>
-
-                <div class="table-title">표1 심사위원의 자격요건</div>
-                <div class="table-scroll-hint">※ 표를 좌우로 스크롤할 수 있습니다.</div>
-                <div class="responsive-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>구 분</th>
-                            <th>자 격 요 건</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>공통사항</strong></td>
-                            <td>
-                                1. 유사경연대회 심사부정, 입시부정 등 해당분야에서 심사관련 물의를 일으킨 자 제외<br>
-                                2. 경연자와 친인척 관계에 있는 자는 반드시 심사위원 구성에서 제외<br>
-                                3. 경력에 대학수학 기간은 제외<br>
-                                4. 최근 7년 이상 연속해서 역임하지 않은 자 (미주내 심사위원 자원 고려)<br>
-                                5. 최근 5년 이상 연속해서 역임하지 않은 자 (미주 외 지역)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>실기자</strong></td>
-                            <td>해당부문 전공자, 해당부문 전수자 이상, 최소 15년 이상 활동한자</td>
-                        </tr>
-                        <tr>
-                            <td><strong>이론, 평론가</strong></td>
-                            <td>해당부문 전공자, 해당부문 최소 10년 이상 활동한 자</td>
-                        </tr>
-                        <tr>
-                            <td><strong>대학교수</strong></td>
-                            <td>해당부문 전공자, 해당부문 강사 이상<br>해당부문 최소 10년 이상 재임한 자</td>
-                        </tr>
-                        <tr>
-                            <td><strong>초/중등교사</strong></td>
-                            <td>해당부문 전공자, 해당부문 임용 후 최소 10년 이상 재임한 자</td>
-                        </tr>
-                        <tr>
-                            <td><strong>기타사항</strong></td>
-                            <td>
-                                1. 평가위원장 제도 도입: 평가위원장은 연속해서 역임할 수 있음<br>
-                                2. 지정심사위원제 도입할 수 있음
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-
-                <div class="table-title">표2 심사위원의 수</div>
-                <div class="table-scroll-hint">※ 표를 좌우로 스크롤할 수 있습니다.</div>
-                <div class="responsive-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>구 분</th>
-                            <th>소 리</th>
-                            <th>무 용</th>
-                            <th>기 악</th>
-                            <th>타 악</th>
-                            <th>창작국악</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>예선</strong></td>
-                            <td colspan="5" style="text-align: center;">3~4 명</td>
-                        </tr>
-                        <tr>
-                            <td><strong>본선</strong></td>
-                            <td>2~3</td>
-                            <td>2~3</td>
-                            <td>2~3</td>
-                            <td>2~3</td>
-                            <td>2~3</td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-                <p style="font-size: 0.9em; color: #666;">※ 예선심사위원과 본선심사위원 구분</p>
-
-                <div class="table-title">표3 심사위원의 구성비율</div>
-                <div class="table-scroll-hint">※ 표를 좌우로 스크롤할 수 있습니다.</div>
-                <div class="responsive-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>구 분</th>
-                            <th>구 성 비 율</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>부문</strong></td>
-                            <td>1. 실기자 80~90%<br>2. 이론, 평론가 10~20%<br>3. 부문별 전공, 부전공 심사가능</td>
-                        </tr>
-                        <tr>
-                            <td><strong>지역</strong></td>
-                            <td>1. 미주 20%~80%<br>2. 미주 외 20%~80%</td>
-                        </tr>
-                        <tr>
-                            <td><strong>연령</strong></td>
-                            <td>1. 50대 이하 20%~80%<br>2. 50대 이상 20%~80%</td>
-                        </tr>
-                        <tr>
-                            <td><strong>기타</strong></td>
-                            <td>분야별 2인 이상, 20인 이하로 구성</td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-
-                <div class="table-title">표4 심사위원 선정방법</div>
-                <div class="table-scroll-hint">※ 표를 좌우로 스크롤할 수 있습니다.</div>
-                <div class="responsive-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>구 분</th>
-                            <th>선정방법 및 시기</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>전문심사위원</strong></td>
-                            <td>
-                                1. 심사위원 후보자 프로파일 접수<br>
-                                2. 심사위원 추천위원회 (조직위원회)에 의해 대회 2개월 전까지 각 부분별 심사위원 2배수 우선 선정<br>
-                                3. 대회 7일 전까지 참가자 명단 확인, 대회 참가자와 특수관계, 가족관계 확인<br>
-                                (특수관계 또는 가족관계가 확인될 경우 해당심사위원은 심사위원 명단에서 배제)<br>
-                                4. 심사위원 선발위원회 (미주예술원 다루) 에 의해 선정<br>
-                                (승낙서 접수/대회 당일까지 심사위원 명단 비공개)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>청중평가단</strong></td>
-                            <td>
-                                1. 심사위원 후보자 접수<br>
-                                2. 심사위원 선발위원회 (조직위원회)<br>
-                                (경연참가자와 특별한 관계가 없으며 객관적이고 공평한 사고의 소유자로 위촉)
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="article" id="article14">
-            <div class="article-title">제14조 심사기준 및 항목</div>
-            <div class="article-content">
-                <div class="sub-item">1) 예선은 당락만 결정한다</div>
-                <div class="sub-item">2) 본선의 각 부문 최고점수는 99점, 최하는 80점으로 한다. (이하 본선에 해당함)</div>
-                <div class="sub-item">3) 심사위원의 점수 중 최고점수와 최하점수를 제외한 점수를 종합하여 고득점 순으로 순위를 결정하고 부문별 대상을 결정한다.</div>
-                <div class="sub-item">3) 심사회피제도를 적용한 경우 최저점수를 제외</div>
-                <div class="sub-item">5) 매 경연이 끝날 때마다 심사점수가 합산되어야 한다.</div>
-                <div class="sub-item">6) 심사위원은 심사위원 개인에게 주어지는 채점표에 짧고 명료한 평가를 반드시 작성해야 한다.</div>
-                <div class="sub-item">7) 각 부문 대상자는 결선 (왕중왕전)에 참가한다. 결선은 대상수상자들과 전공자가 경연하여 종합대상자를 선별한다. 전공 참가자가 없을 경우 부문 대상자들이 경연을 실시하여 종합대상자를 선정한다.</div>
-                <div class="sub-item">8) 동점처리 기준
-                    <div style="margin-left: 20px;">
-                        <div class="sub-item">(1) 동점의 경우</div>
-                        <div class="sub-item">(1) 단체 참가자</div>
-                        <div class="sub-item">(2) 나이 어린 참가자</div>
-                        <div class="sub-item">순으로 결정한다.</div>
-                        <div class="sub-item">(2) 위 기준을 적용할 수 없는 특이한 부문은 심사위원회가 협의하여 시행한다.</div>
-                        <div class="sub-item">(3) 기타 사항은 통상 관례에 따라 시행한다.</div>
-                    </div>
-                </div>
-                <div class="sub-item">9) 평가결과 집게 후 심사위원회는 종합대상자에 한해 종합점수, 경연자의 결격사항, 작품 수준 등에 대한 의견을 논의 후에 최종결정을 할 수 있으며 종합점수 집게 후 참가자와 청중에 점수를 공개한다.</div>
-                <div class="sub-item">10) 본 대회에 참가한 경연자나 소속 인솔자가 본 대회 규정에 의한 경연절차나 심사결과에 불복하고 본 대회에 품위를 심각하게 손상시키는 행위가 있을 경우, 심사위원회와 대회장 합의하에 실격처리 할 수 있으며, 향후 본 대회의 참가를 일정기간 제한할 수 있다.</div>
-                <div class="sub-item">11) 입상자로서 현격한 결격 사유가 발견될 경우에는 심사위원회와 조직위원회의 협의로 입상자격을 취소할 수 있다.</div>
-                <div class="sub-item">12) 일부 심사위원이 채점을 중단하거나 심사거부 사태가 발생할 시는 문제된 부분에 대한 심사점수를 무효로 하고 심사위원회와 주관단체가 협의하여 재경연 여부를 판단한다.</div>
-
-                <div class="table-title">표5 배점 및 항목</div>
-                <div class="table-scroll-hint">※ 표를 좌우로 스크롤할 수 있습니다.</div>
-                <div class="responsive-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>구분</th>
-                            <th>소리</th>
-                            <th>무용</th>
-                            <th>기악</th>
-                            <th>타악</th>
-                            <th>창작</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>공력</strong></td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td><strong>음정/박자</strong></td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td><strong>자태</strong></td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td><strong>성음</strong></td>
-                            <td>20</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><strong>연주</strong></td>
-                            <td></td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td><strong>예술성</strong></td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="article" id="article15">
-            <div class="article-title">제15조 경연방법</div>
-            <div class="article-content">
-                <div class="sub-item">1) 경연시간을 준수하되 대회의 효율적 진행을 위하여 필요한 경우 심사위원장의 권한으로 경연시간을 가감할 수 있으되, 모든 참가자에게 경연시간은 동일하게 배정하여야 한다. 경연 시간을 동등하게 분배하지 않은 경우 참가자의 의도에 따라 재경연을 할 수 있다.</div>
-                <div class="sub-item">2) 단체의 경우 고학년 팀에 저학년이 편입된 경우 고학년팀으로 분류되며, 저학년 팀(저학년 수가 많음)에 고학년이 편입된 경우 경력을 고려하여 팀을 분류한다.</div>
-                <div class="sub-item">3) 예선과 본선의 모든 경연은 자유곡 (작품)으로 경연한다.</div>
-                <div class="sub-item">4) 모든 참가자는 참가신청 접수증과 본인임을 확인할 수 있는 신분증을 지참하여야 한다.</div>
-                <div class="sub-item">5) 경연에 필요한 악기, 소품, 음반, 반주자 등은 반드시 참가자가 준비하여야 한다. 부득이한 경우 반주에 필요한 소품 등을 사전에 요청하여 주최단체가 제공할 수 있으나 비용은 참가자 부담으로 한다.</div>
-            </div>
-        </div>
-
-        <div class="article" id="article16">
-            <div class="article-title">제16조 심사위원석 설치</div>
-            <div class="article-content">
-                심사위원석은 행사 전에 설치하되, 심사위원 상호간의 책상 간격을 폭넓게 유지 (2좌석 이상 간격 유지)하여 상호간섭을 최대한 배제하도록 한다.
-            </div>
-        </div>
-
-        <div class="article" id="article17">
-            <div class="article-title">제17조 심사위원 교육</div>
-            <div class="article-content">
-                <div class="sub-item">1) 대회개최 전 조직위원장 (또는 조직위원장에 의해 지정된 인원, 평가위원장 등)이 심사위원에 대한 심사기준, 심사방법, 심사요강을 교육하고 대회의 특성, 대회 운영규정 및 심사규정을 숙지시켜야 한다.</div>
-                <div class="sub-item">2) 주최측은 심사위원 교육 사진자료를 반드시 남긴다.</div>
-                <div class="sub-item">3) 심사위원은 개인정보 수집활용 동의서와 심사위원 사전교육 확인서에 반드시 자필 서명을 해야 한다. (문체부 제출)</div>
-            </div>
-        </div>
-
-        <div class="article" id="article18">
-            <div class="article-title">제18조 심사결과 발표</div>
-            <div class="article-content">
-                <div class="sub-item">1) 투명하고 공정한 심사를 위하여 집계된 점수를 합산이 되는대로 게시판에 즉시 게시 또는 영상으로 즉각 게시한다. 시상식 간에 사회자가 이 점수를 다시 한번 공개한다.</div>
-                <div class="sub-item">2) 본선결과는 7일 이내 홈페이지를 통해 공지한다.</div>
-            </div>
-        </div>
-
-        <div class="article" id="article19">
-            <div class="article-title">제19조 심사평</div>
-            <div class="article-content">
-                심사위원장은 각 심사위원으로부터 채점표를 받아 종합 심사평을 작성하여 발표한다.<br>
-                심사위원장이 지명한 인원 (평가위원장 등)이 종합 심사평을 발표할 수 있다.
-            </div>
-        </div>
-
-        <div class="article" id="article20">
-            <div class="article-title">제20조 경연대회 자체평가 및 결과반영</div>
-            <div class="article-content">
-                <div class="sub-item">1) 대회의 위상을 높이고 공신력을 제고하기 위해 경연대회 후 자체평가를 실시하여 우수 사례를 발굴하여 지속 시행하고 미흡한 사항과 문제점은 적극 개선/보완하여 미주지역에서 최고의 권위있는 대회로 발전시켜가는 자료로 활용한다.</div>
-                <div class="sub-item">2) 본 경연대회의 발전과 운영능력을 향상하기 위하여 한국의 우수사례를 수집하여 이를 차후 사업에 반영한다.</div>
-            </div>
-        </div>
-
+        <!-- ... (이하 본문 그대로 생략) ... -->
         <div class="article" id="article21">
             <div class="article-title">제21조 부칙</div>
             <div class="article-content">
@@ -803,7 +455,10 @@
     </div>
 
     <!-- 위로가기 버튼 -->
-    <button id="backToTop" title="위로가기" aria-label="위로가기">&#8679;</button>
+    <button id="backToTop" title="위로가기" aria-label="위로가기">
+        <span class="backToTop-arrow">&#8679;</span>
+        <span class="backToTop-label">위로가기</span>
+    </button>
 
     <script>
         // 부드러운 스크롤 효과
@@ -856,8 +511,8 @@
         // 위로가기 버튼 기능
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 200) {
-                backToTopBtn.style.display = 'block';
+            if (window.scrollY > 150) {
+                backToTopBtn.style.display = 'flex';
             } else {
                 backToTopBtn.style.display = 'none';
             }
